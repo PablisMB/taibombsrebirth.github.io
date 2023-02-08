@@ -66,17 +66,31 @@ abutton:hover {
 }
 
 header {
-  background-color: rgb(240, 240, 240);
   position: fixed;
+}
+
+header.unscrolled {
+  background: linear-gradient(to bottom, rgb(140, 140, 140), rgba(0, 0, 0, 0));
+}
+
+header.scrolled {
+  background-color: rgb(240, 240, 240);
 }
 
 header .logo {
   margin: 0;
   padding: 10px;
   font-weight: 700;
-  color: rgb(43, 43, 43);
   font-size: 25px;
   transition: all 0.2s linear;
+}
+
+header.scrolled .logo {
+  color: #202020;
+}
+
+header.unscrolled .logo {
+  color: rgb(230, 230, 230);
 }
 
 header .logo:hover {
@@ -99,11 +113,18 @@ header nav {
 
 header a {
   text-decoration: none;
-  color: rgb(43, 43, 43);
   font-size: 18px;
   font-weight: bold;
   padding: 5px 10px;
   transition: all 0.2s linear;
+}
+
+header.scrolled a {
+  color: #202020;
+}
+
+header.unscrolled a {
+  color: rgb(230, 230, 230);
 }
 
 header a nav {
@@ -203,10 +224,14 @@ header a:hover {
   transform-origin: bottom left;
 }
 
+#muestras {
+  height: 100%;
+}
+
 #muestras .container {
   padding: 0;
   width: 100%;
-  padding-bottom: 600px;
+  padding-bottom: 100px;
 }
 
 #muestras h2 {
@@ -264,19 +289,44 @@ header a:hover {
   opacity: 0;
   transition: opacity 0.5s ease;
 }
+
+.product-card .taibon img {
+  transform: none;
+  height: 200px;
+  width: 300px;
+  left: 0;
+  top: 0;
+}
+.product-card .cibertai img {
+  transform: none;
+  height: 200px;
+  width: 300px;
+  left: 0;
+  top: 0;
+}
+
 .product-card .main-images img.active {
   opacity: 1;
 }
 .product-card .shoe-details .shoe_name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
   font-size: 24px;
   font-weight: 500;
   color: #161616;
+  text-align: center;
+  height: 55px;
+  width: 295px;
+  overflow: hidden;
 }
 .product-card .shoe-details p {
   font-size: 12px;
   font-weight: 400;
   color: #333;
   text-align: justify;
+  min-height: 100px;
 }
 .product-card .shoe-details .stars i {
   margin: 0 -1px;
@@ -301,7 +351,7 @@ header a:hover {
 .color-option .circles {
   display: flex;
 }
-.color-option .circles .circle {
+.color-option .circles .circle.granada {
   height: 18px;
   width: 18px;
   background: #0d7a13;
@@ -310,9 +360,36 @@ header a:hover {
   cursor: pointer;
   transition: all 0.4s ease;
 }
-.color-option .circles .circle.blue.active {
+.color-option .circles .circle.taibomb {
+  height: 18px;
+  width: 18px;
+  background: #b7c4b8;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.color-option .circles .circle.cibertai {
+  height: 18px;
+  width: 18px;
+  background: #e72727;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.color-option .circles .circle.blue.active.granada {
   box-shadow: 0 0 0 2px #fff, 0 0 0 4px #0d7a13;
 }
+
+.color-option .circles .circle.blue.active.taibomb {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #b7c4b8;
+}
+
+.color-option .circles .circle.blue.active.cibertai {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #e72727;
+}
+
 .color-option .circles .circle.pink {
   background: #fa1795;
 }
@@ -373,6 +450,8 @@ header a:hover {
   font-weight: 600;
   letter-spacing: 1px;
   color: #fff;
+  cursor: pointer;
+  animation: gradient 3s infinite;
 }
 
 #oferta {
@@ -441,11 +520,11 @@ header a:hover {
 .btn-c {
   animation: gradient 3s infinite;
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .btn-c:active {
   animation: gradient 3s infinite;
-  transform: scale(0.8);
 }
 
 @keyframes gradient {
@@ -478,7 +557,7 @@ header a:hover {
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  height: 90vh;
+  height: 100vh;
   background-color: rgba(30, 30, 30);
   color: white;
 }
@@ -509,6 +588,90 @@ footer .container img {
   padding: 50px;
 }
 
+.btn {
+  border: none;
+  outline: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+  background-color: #578077;
+  border-color: #b7a196;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+/* glow */
+.btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #5b8266,
+    #aef6c7,
+    #b7a196,
+    #aef6c7,
+    #5b8266,
+    #aef6c7,
+    #b7a196,
+    #aef6c7
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* hover */
+.btn:hover {
+  color: #fff;
+  transition: all 0.1s linear;
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn:active:after {
+  background: transparent;
+}
+
 @media (min-width: 727px) {
   header {
     position: fixed;
@@ -527,7 +690,16 @@ footer .container img {
   header nav {
     flex-direction: row;
     padding-bottom: 0;
-    padding-right: 30px;
+  }
+
+  header.scrolled .container {
+    padding: 0;
+    transition: all 0.5s ease;
+  }
+
+  header.unscrolled .container {
+    padding: 10px 20px;
+    transition: all 0.5s ease;
   }
 
   #hero h1 {
