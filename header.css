@@ -1,0 +1,132 @@
+header {
+  position: fixed;
+}
+
+header.unscrolled.notwhitebg {
+  background: linear-gradient(to bottom, rgb(140, 140, 140), rgba(0, 0, 0, 0));
+}
+
+header.scrolled.notwhitebg {
+  background-color: rgb(240, 240, 240);
+}
+
+header.unscrolled.whitebg {
+  background-color: white;
+}
+
+header.scrolled.whitebg {
+  background-color: rgb(240, 240, 240);
+}
+
+header .logo {
+  margin: 0;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 25px;
+  transition: all 0.2s linear;
+}
+
+header.scrolled.notwhitebg .logo {
+  color: #202020;
+}
+
+header.unscrolled.notwhitebg .logo {
+  color: rgb(230, 230, 230);
+}
+
+header.scrolled.whitebg .logo {
+  color: #202020;
+}
+
+header.unscrolled.whitebg .logo {
+  color: #202020;
+}
+
+header .logo:hover {
+  color: #5efb80 !important;
+}
+
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15px;
+}
+
+header nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+header a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: all 0.2s linear;
+}
+
+header.scrolled.notwhitebg a {
+  color: #202020;
+}
+
+header.unscrolled.notwhitebg a {
+  color: rgb(230, 230, 230);
+}
+
+header.scrolled.whitebg a {
+  color: #202020;
+}
+
+header.unscrolled.whitebg a {
+  color: #202020;
+}
+
+header a nav {
+  padding: 0 16px 0 5px;
+}
+
+header a:hover {
+  color: #5efb80 !important;
+}
+
+@media (min-width: 727px) {
+  header {
+    position: fixed;
+    min-width: 100%;
+    z-index: 100;
+  }
+
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  header nav {
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+
+  header.scrolled .container {
+    padding: 0;
+    transition: all 0.5s ease;
+  }
+
+  header.unscrolled .container {
+    padding: 10px 20px;
+    transition: all 0.5s ease;
+  }
+}
+
+@media (max-width: 727px) {
+  header {
+    position: fixed;
+    min-width: 100%;
+    z-index: 100;
+  }
+}
