@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaiBombs Rebirth</title>
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="especial.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="icon" href="https://i.pinimg.com/originals/2d/b7/f7/2db7f72926a43467c1f685765cbb3181.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Space+Mono&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="unscrolled whitebg">
+        <div class="container" id="c-t">
+            <a href="#hero">
+                <p class="logo">TaiBombs</p>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#muestras">The Bombs</a>
+                <a href="#contacta">Contact the CEOs</a>
+            </nav>
+        </div>
+    </header>
+    <script src="./main.js"></script>
+    <div class="especial">
+        <div class="esp-img">
+            <img src="fotos/especial.jpeg" alt="" />
+        </div>
+        <div class="esp-text">
+            <span class="esp-title">The TaiBomb</span>
+            <span class="esp-subtitle">This is a special and exclusive product from the TaiBombs brand.</span>
+            <span class="esp-details"><span class="bold">Color:</span> White</span>
+            <span class="esp-details"><span class="bold">Material:</span> Yes</span>
+            <span class="esp-details"><span class="bold">Size:</span> Small</span>
+            <span class="esp-price">€1,231,560.00</span>
+            <div class="esp-btn-div">
+                <button class="esp-button">Buy</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container" id="copy">
+            <p></p>
+        </div>
+    </footer>
+    <script>
+        const currentYear = new Date().getFullYear();
+        const copy = document.getElementById("copy");
+        copy.innerHTML = `&copy; PablisMB ${currentYear}`;
+    </script>
+</body>
+
+</html>
